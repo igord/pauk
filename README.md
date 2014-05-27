@@ -2,18 +2,28 @@ pauk
 =========
 
 Basic Node.js web crawler.
-
+### Install
+```
+$ npm install pauk
+```
 ## Example:
 
 ```js
-var pauk = new Pauk({maxRequests: 10});
+var Pauk = require('pauk'),
+    pauk = new Pauk({maxRequests: 10});
+
 pauk.onFinish = function(cache) {
     cache.forEach(function(v, uri) {
         if (v.error) console.log("Error:\n" + v.error);
 	    else console.log("Links:\n" + v.links.join("\n"), "\nCrawled Parents:\n" + v.parents.join("\n") + "\n");
     });
 };
+
 pauk.crawl('http://example.com');
+```
+### Test
+```
+$ grunt
 ```
 ## API
 ### new Pauk(config)
@@ -67,3 +77,4 @@ pauk.onFinish = function(cache) {
 }
 pauk.crawl('http://example.com');
 ```
+
