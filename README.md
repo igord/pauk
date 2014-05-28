@@ -62,7 +62,9 @@ Called when crawling is finished. Parameter passed to this function is object co
         other: [] // values of href attributes of 'a' tags that are not URIs
     },
     links: [], // values of href attributes of 'a' tags (relative are converted to absolute)
-    external: [] // values of href attributes of 'a' tags that are external links
+    external: [], // values of href attributes of 'a' tags that are external links
+    parents: [], // normalized URIs of the pages containing links to this page
+    protocol: 'string' // protocol from the URI of this page
 }
 ```
 
